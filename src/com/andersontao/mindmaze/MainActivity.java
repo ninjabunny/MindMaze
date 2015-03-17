@@ -1,5 +1,6 @@
 package com.andersontao.mindmaze;
 
+import java.io.IOException;
 import java.util.Random;
 
 import android.support.v7.app.ActionBarActivity;
@@ -59,6 +60,16 @@ public class MainActivity extends ActionBarActivity {
 		endingPositionX = 2;
 		endingPositionY = 1;
 		printStage(6, ss);
+
+		// testing
+		LevelParser lp = new LevelParser(getApplicationContext());
+
+		try {
+			lp.init();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -167,7 +178,7 @@ public class MainActivity extends ActionBarActivity {
 						mp.release();
 					};
 				});
-				Toast.makeText(getApplicationContext(), "TODO: gotoCredits",
+				Toast.makeText(getApplicationContext(), "LEVEL COMPLETED!!!",
 						Toast.LENGTH_LONG).show();
 
 			}
@@ -181,14 +192,15 @@ public class MainActivity extends ActionBarActivity {
 					};
 				});
 			} else {
-				MediaPlayer mp = MediaPlayer.create(getApplicationContext(),
-						R.raw.jump);
-				mp.start();
-				mp.setOnCompletionListener(new OnCompletionListener() {
-					public void onCompletion(MediaPlayer mp) {
-						mp.release();
-					};
-				});
+				// MediaPlayer mp = MediaPlayer.create(getApplicationContext(),
+				// R.raw.jump);
+				// mp.start();
+				// mp.setOnCompletionListener(new OnCompletionListener() {
+				// public void onCompletion(MediaPlayer mp) {
+				// mp.release();
+				// };
+				// });
+				Audio.getInstance(getApplicationContext()).playJump();
 				currentPositionX = tempCurrentPositionX;
 				currentPositionY = tempCurrentPositionY;
 			}

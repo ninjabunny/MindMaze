@@ -4,4 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.andersontao.mindmaze.MainActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10px"
+        android:text="MM, a maze game that is played in your mind. The objective of the game is to navigate a maze from the starting point to the finish point with only audio feedback. The maze is comprised of a spaces much like a chess board. The players may only move orthogonally by swiping the screen upwards, downwards, left, or right. When a player attempts to move into a space, a sound will play indicating the type of space he has moved into. For example, a player might swipe in one of the directions and hear a “thud” sound. This indicates that he has hit a wall and is unable to further move into that particular direction. Another example would be that the player attempts another move and hear a “boingggg!” sound, this indicates that he has moved into an empty space and may make further moves. The player will keep moving throughout the maze to find the finish space which then he will hear a “KaChing!!!” sound, indicating that he has beaten the level. As the game progresses players will be introduced to more sounds to decipher."
+        android:textSize="18sp" />
+
+</FrameLayout>
